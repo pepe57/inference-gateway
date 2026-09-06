@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.51.3](https://github.com/inference-gateway/inference-gateway/compare/v0.51.2...v0.51.3) (2026-09-06)
+
+### ♻️ Improvements
+
+* **api:** extract shared upstream round-trip into forwardUpstream ([#631](https://github.com/inference-gateway/inference-gateway/issues/631)) ([90b1de1](https://github.com/inference-gateway/inference-gateway/commit/90b1de10518e2cbaf37238ae26a5326af2961f6a))
+* centralize provider resolution in routing ([#633](https://github.com/inference-gateway/inference-gateway/issues/633)) ([51003b2](https://github.com/inference-gateway/inference-gateway/commit/51003b21905454fe932fe4d3e697e6654753d073))
+* drop single-implementation api.Router interface ([#643](https://github.com/inference-gateway/inference-gateway/issues/643)) ([4e6f615](https://github.com/inference-gateway/inference-gateway/commit/4e6f615d736e63e09c8d41f9e4183d096b71b90d))
+* drop single-implementation mcp.Agent interface ([#644](https://github.com/inference-gateway/inference-gateway/issues/644)) ([1cec600](https://github.com/inference-gateway/inference-gateway/commit/1cec600529196136976777fa6d582e60fd9e9ffe))
+* drop single-implementation middleware interfaces ([#641](https://github.com/inference-gateway/inference-gateway/issues/641)) ([064c5e0](https://github.com/inference-gateway/inference-gateway/commit/064c5e0e6422d9b38f3b8e1e9e96af1b732461d2))
+* drop uncalled Client and MCPClientInterface methods ([#642](https://github.com/inference-gateway/inference-gateway/issues/642)) ([b0c327e](https://github.com/inference-gateway/inference-gateway/commit/b0c327e74fb12a395f20c479ddd8afce8b62e4f2))
+* pass provider and model per agent call ([#634](https://github.com/inference-gateway/inference-gateway/issues/634)) ([e91798e](https://github.com/inference-gateway/inference-gateway/commit/e91798e5de6fdec539ffa9915ad4229dc4723065))
+* share provider request constructor ([#632](https://github.com/inference-gateway/inference-gateway/issues/632)) ([1c8a98c](https://github.com/inference-gateway/inference-gateway/commit/1c8a98c69efeaa49498672922e3a24401ec3aeb0))
+* share SSE framing constants and error frame ([#635](https://github.com/inference-gateway/inference-gateway/issues/635)) ([9b5d714](https://github.com/inference-gateway/inference-gateway/commit/9b5d714d738e1e4f5aa3def7c9f362fd42005c35))
+
 ## [0.51.2](https://github.com/inference-gateway/inference-gateway/compare/v0.51.1...v0.51.2) (2026-09-06)
 
 ### ♻️ Improvements
