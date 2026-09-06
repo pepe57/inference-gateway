@@ -159,6 +159,8 @@ jobs:
         run: |
           sed -i 's/const VERSION = ".*"/const VERSION = "v${{ needs.version.outputs.new_release_version }}"/' config/meta.go
 
+          git tag "$GORELEASER_CURRENT_TAG"
+
           goreleaser release --clean --skip=validate
 
       - name: Upload release artifacts
