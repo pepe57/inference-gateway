@@ -332,7 +332,7 @@ func (a *agentImpl) ExecuteTools(ctx context.Context, toolCalls []types.ChatComp
 				results = append(results, a.toolMessage(toolCall.ID, fmt.Sprintf("Error: Failed to parse arguments: %v", err)))
 				continue
 			}
-			toolName := strings.TrimPrefix(toolCall.Function.Name, "mcp_")
+			toolName := strings.TrimPrefix(toolCall.Function.Name, ToolNamePrefix)
 			results = append(results, a.dispatchTool(ctx, toolCall.ID, toolName, toolCall.Function.Arguments, args))
 		}
 	}
@@ -359,7 +359,7 @@ func (a *agentImpl) handleToolsGet(toolCall types.ChatCompletionMessageToolCall)
 		a.logger.Error("failed to marshal tool catalog", err)
 		return a.toolMessage(toolCall.ID, fmt.Sprintf("Error: %v", err))
 	}
-	a.logger.Debug("mcp_tools_get answered", "query", params.Query, "names", params.Names, "result_count", len(catalog))
+	a.logger.Debug(SelectorToolGet+" answered", "query", params.Query, "names", params.Names, "result_count", len(catalog))
 	return a.toolMessage(toolCall.ID, string(catalogBytes))
 }
 
@@ -375,10 +375,10 @@ func (a *agentImpl) handleToolsExecute(ctx context.Context, toolCall types.ChatC
 		return a.toolMessage(toolCall.ID, fmt.Sprintf("Error: Failed to parse arguments: %v", err))
 	}
 	if params.Name == "" {
-		return a.toolMessage(toolCall.ID, "Error: mcp_tools_execute requires a 'name'")
+		return a.toolMessage(toolCall.ID, "Error: "+SelectorToolExecute+" requires a 'name'")
 	}
 
-	toolName := strings.TrimPrefix(params.Name, "mcp_")
+	toolName := strings.TrimPrefix(params.Name, ToolNamePrefix)
 	if params.Arguments == nil {
 		params.Arguments = map[string]any{}
 	}
