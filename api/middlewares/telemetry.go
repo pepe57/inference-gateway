@@ -102,11 +102,9 @@ func (t *TelemetryImpl) Middleware() gin.HandlerFunc {
 		model := requestBody.Model
 
 		provider := "unknown"
-		if detected, _ := routing.DetermineProviderAndModelName(model); detected != nil {
-			provider = string(*detected)
-		} else if queried := types.Provider(c.Query("provider")); queried != "" {
-			if _, exists := registry.Registry[queried]; exists {
-				provider = string(queried)
+		if detected, _, ok := routing.ResolveProvider(c.Query("provider"), model); ok {
+			if _, exists := registry.Registry[detected]; exists {
+				provider = string(detected)
 			}
 		}
 
