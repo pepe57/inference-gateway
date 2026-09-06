@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.51.2](https://github.com/inference-gateway/inference-gateway/compare/v0.51.1...v0.51.2) (2026-09-06)
+
+### ♻️ Improvements
+
+* **api:** centralize route, content-type and MCP tool-prefix constants ([#622](https://github.com/inference-gateway/inference-gateway/issues/622)) ([742e161](https://github.com/inference-gateway/inference-gateway/commit/742e16103688ed7c4b2b293234b501a245a350d4))
+* **api:** share pass-through tail and fix doc comments ([#621](https://github.com/inference-gateway/inference-gateway/issues/621)) ([7c60006](https://github.com/inference-gateway/inference-gateway/commit/7c60006318fcde9340521b9555ac3348cc81fd7a))
+* **middlewares:** return usage struct, dedupe capture writer ([#624](https://github.com/inference-gateway/inference-gateway/issues/624)) ([73772d9](https://github.com/inference-gateway/inference-gateway/commit/73772d95ea841a8a82ce500a861dd7876da49ff1)), closes [#619](https://github.com/inference-gateway/inference-gateway/issues/619)
+
+### 🐛 Bug Fixes
+
+* **ci:** create local tag before goreleaser build ([#625](https://github.com/inference-gateway/inference-gateway/issues/625)) ([02c4586](https://github.com/inference-gateway/inference-gateway/commit/02c4586e352ee257c75eedd18d0f1c388ea18939)), references [goreleaser/goreleaser#6850](https://github.com/goreleaser/goreleaser/issues/6850)
+
+### 🔧 Miscellaneous
+
+* **ci:** bump pinned tool versions to current releases ([#623](https://github.com/inference-gateway/inference-gateway/issues/623)) ([9f4816b](https://github.com/inference-gateway/inference-gateway/commit/9f4816b8055e1acf750aa3093f1abcff61319bc4))
+* **deps:** bump claude-code 2.1.245 -> 2.1.260 ([#620](https://github.com/inference-gateway/inference-gateway/issues/620)) ([790acaa](https://github.com/inference-gateway/inference-gateway/commit/790acaa4c003f68609eb68f9efc6b7de355dc680))
+* **deps:** bump github.com/coreos/go-oidc/v3 in the gomod group ([#614](https://github.com/inference-gateway/inference-gateway/issues/614)) ([05b2839](https://github.com/inference-gateway/inference-gateway/commit/05b283976a16fef9375b5c5e4aa3f624e1144782))
+
 ## [0.51.1](https://github.com/inference-gateway/inference-gateway/compare/v0.51.0...v0.51.1) (2026-09-04)
 
 ### ♻️ Improvements
